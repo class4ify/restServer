@@ -70,7 +70,9 @@ class categController extends Controller
      */
     public function show($id)
     {
-        $post = categoryModel::whereId($id)->first();
+        // $post = categoryModel::whereId($id)->first();
+        $post = categoryModel::whereId($id)->get()->load(['apiModel']);
+
 
         if($post)   {
             return response()->json([
