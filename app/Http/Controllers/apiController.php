@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\apiModel;
+// use App\Models\categoryModel;
 use storage;
 use file;
 class apiController extends Controller
@@ -109,7 +110,7 @@ class apiController extends Controller
     public function update(Request $request, $id)
     {
         $post=apiModel::findOrFail($id);
-        
+        // $post=categoryModel::findOrFail($id);
             if($post){
                 $post->update([
                     'title'     =>$request->title,
